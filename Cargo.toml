@@ -1,10 +1,16 @@
 [package]
 name = "rusty-particle-hub"
 version = "0.1.0"
-authors = ["jonathanzalger <misc+github@jzalger.net>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-rocket = { version = "0.4.7", features = ["tls"] }
+rocket = "0.4.7"
+reqwest = { version = "0.11", features = ["json"] }
+serde = "1.0.37"
+# serde_json = "1.0.47"
+serde_derive = "1.0.47"
+
+[dependencies.rocket_contrib]
+version = "0.4.7"
+default-features = false
+features = ["tera_templates", "serve"]
