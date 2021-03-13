@@ -1,0 +1,36 @@
+[development]
+address = "localhost"
+port = 7070
+workers = 4
+keep_alive = 5
+read_timeout = 5
+write_timeout = 5
+log = "normal"
+# secret_key = [randomly generated at launch]
+# limits = { forms = 32768 }
+
+[staging]
+address = "0.0.0.0"
+port = 7070
+workers = 4
+keep_alive = 5
+read_timeout = 5
+write_timeout = 5
+log = "normal"
+# secret_key = [randomly generated at launch]
+# limits = { forms = 32768 }
+
+[production]
+address = "0.0.0.0"
+port = 7070
+workers = 4
+keep_alive = 5
+read_timeout = 5
+write_timeout = 5
+log = "critical"
+# secret_key = [randomly generated at launch]
+# limits = { forms = 32768 }
+
+# [global.tls]
+# certs = "/run/secrets/particlehub.crt"
+# key = "/run/secrets/particlehub.key"

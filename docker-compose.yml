@@ -1,0 +1,17 @@
+
+version: "3.9"
+services:
+  web:
+    build: .
+    ports:
+      - "7070:7070"
+    environment:
+      PHCONFIG_FILE: /run/secrets/ph.config
+      ROCKET_ENV: development
+    restart: always
+    secrets:
+      - ph.config
+
+secrets:
+  ph.config:
+    file: ph.config
