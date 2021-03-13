@@ -5,6 +5,8 @@ extern crate rocket_contrib;
 extern crate serde;
 #[macro_use] extern crate serde_derive;
 
+mod models;
+
 use rocket_contrib::templates::Template;
 use rocket_contrib::serve::StaticFiles;
 // use serde_json::value::Index;
@@ -18,6 +20,12 @@ fn root() -> Template {
     let context = Context{};
     Template::render("particlehub", &context)
 }
+
+#[get("/get-devices")]
+fn get_devices() {
+    let cloud = models::ParticleCloud::new("abc123");
+}
+
 
 fn main() {
     rocket::ignite()
